@@ -12,12 +12,12 @@ def contains(point, polygon):
     return boolean
 
 def test():
-    point = Point(40.7706764,-73.9497706)
+    point = Point(0.5,0.5)
     r2 = LinearRing([
-                (40.785935, -73.951098),
-                (40.781342, -73.938919),
-                (40.756595, -73.954295),
-                (40.762235, -73.968178)])
+                (1.1),
+                (0, 0),
+                (1, 0),
+                (0, 1)])
     polygon2 = Polygon(r2)
     boolean = polygon2.contains(point)
     print (boolean)
@@ -34,16 +34,17 @@ def main():
         reader = csv.reader(f)
         for row in reader:
         	#district coordinates
-            r1 = LinearRing([(40.796920, -73.949198),
-                (40.790693, -73.934299),
-                (40.782237, -73.940940),
-                (40.787901, -73.955754)])
+            r1 = LinearRing(([
+                (1.1),
+                (0, 0),
+                (1, 0),
+                (0, 1)]))
             polygon1 = Polygon(r1)
             r2 = LinearRing([
-                (40.785935, -73.951098),
-                (40.781342, -73.938919),
-                (40.756595, -73.954295),
-                (40.762235, -73.968178)])
+                (1.1),
+                (0, 0),
+                (1, 0),
+                (0, 1)])
             polygon2 = Polygon(r2)
                 #96 to 59
             string = row[2]+" "+row[3]+" "+row[4]
